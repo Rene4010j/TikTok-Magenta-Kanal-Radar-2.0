@@ -1,0 +1,39 @@
+name: Kanäle prüfen
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # alle 10 Minuten (UTC, GitHub-Zeitplan kann leicht verzögert sein)
+  workflow_dispatch: {}       # manueller Start über den "Actions"-Tab möglich
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kanal-radar-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: yt-dlp installieren
+        run: pip install -U yt-dlp
+
+      - name: Kanäle prüfen
+        run: python scripts/run_checks.py
+
+      - name: Änderungen committen
+        run: |
+          git config user.name "kanal-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/status.json data/events.json
+          git diff --quiet --cached || git commit -m "Kanal-Update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
