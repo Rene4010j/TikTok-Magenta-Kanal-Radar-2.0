@@ -1,8 +1,8 @@
 {
   "nasa": {
-    "status": "error",
-    "last_error": "ERROR: [tiktok:user] nasa: Unable to extract secondary user ID. If you are able to get the channel_id from a video posted by this user, try using \"tiktokuser:channel_id\" as the input URL (replacing `channel_id` with its actual value)",
-    "last_checked_at": "2026-08-23T02:12:55.084770+00:00",
+    "status": "ok",
+    "last_error": null,
+    "last_checked_at": "2026-08-23T03:25:09.305821+00:00",
     "last_video_id": "7676868860749827342",
     "last_video_url": "https://www.tiktok.com/@nasa/video/7676868860749827342",
     "last_video_title": "The Moon understood the assignment 🌕",
