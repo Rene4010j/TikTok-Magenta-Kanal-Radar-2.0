@@ -1,8 +1,8 @@
 {
   "nasa": {
     "status": "error",
-    "last_error": "ERROR: [TikTok] 7678067319976905998: Unexpected response from webpage request; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U",
-    "last_checked_at": "2026-08-28T05:18:27.871742+00:00",
+    "last_error": "ERROR: [tiktok:user] nasa: Unable to extract secondary user ID. If you are able to get the channel_id from a video posted by this user, try using \"tiktokuser:channel_id\" as the input URL (replacing `channel_id` with its actual value)",
+    "last_checked_at": "2026-08-28T17:30:13.580088+00:00",
     "last_video_id": "7676868860749827342",
     "last_video_url": "https://www.tiktok.com/@nasa/video/7676868860749827342",
     "last_video_title": "The Moon understood the assignment 🌕",
